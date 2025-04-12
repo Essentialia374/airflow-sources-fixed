@@ -108,8 +108,6 @@ namespace offsets
 
 		process_packet = memory::get_pattern(engine_dll, CXOR("55 8B EC 83 E4 C0 81 EC ? ? ? ? 53 56 57 8B 7D 08 8B D9"));
 
-		direct_present = memory::get_pattern(gameoverlayrenderer_dll, CXOR("FF 15 ? ? ? ? 8B F0 85 FF")).add(XORN(2));
-		direct_reset = memory::get_pattern(gameoverlayrenderer_dll, CXOR("C7 45 ? ? ? ? ? FF 15 ? ? ? ? 8B D8")).add(XORN(9));
 		direct_device = memory::get_pattern(shaderapidx9_dll, CXOR("A1 ? ? ? ? 50 8B 08 FF 51 0C")).add(XORN(1));
 
 		local = memory::get_pattern(client_dll, CXOR("8B 0D ? ? ? ? 83 FF FF 74 07")).add(XORN(2));
