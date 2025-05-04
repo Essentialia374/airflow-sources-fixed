@@ -366,7 +366,7 @@ namespace patterns
 		update_addon_models = g_memory->find_pattern(modules::client, xor_c_s("55 8B EC 83 EC ? 53 8B D9 8D 45 ? 8B 08"));
 		update_all_viewmodel_addons = g_memory->find_pattern(modules::client, xor_c_s("55 8B EC 83 E4 F8 83 EC 2C 53 8B D9 56 57 8B"));
 		get_viewmodel = g_memory->find_pattern(modules::client, xor_c_s("55 8B EC 8B 45 08 53 8B D9 56 8B 84 83 ? ? ? ? 83 F8 FF 74 1A 0F B7 F0"));
-		viewmodel_interpolate = g_memory->find_pattern(modules::client, xor_c_s("55 8B EC 83 E4 ? 83 EC ? 53 56 8B F1 57 83 BE ? ? ? ? ? 75 ? 8B 46 ? 8D 4E ? FF 50 ? 85 C0 74 ? 8B CE E8 ? ? ? ? 8B 9E"));
+		viewmodel_interpolate = g_memory->find_pattern(modules::client, xor_c_s("55 8B EC 83 E4 F8 83 EC 0C 53 56 8B F1 57 83 BE"));
 		host_shutdown = g_memory->find_pattern(modules::engine, xor_c_s("55 8B EC 83 E4 ? 56 8B 35"));
 		note_pred_error = g_memory->find_pattern(modules::client, xor_c_s("55 8B EC 83 EC ? 56 8B F1 8B 06 8B 80 ? ? ? ? FF D0 84 C0 75"));
 		construct_voice_data_message = g_memory->find_pattern(modules::engine, xor_c_s("56 57 8B F9 8D 4F 08 C7 07 ? ? ? ? E8 ? ? ? ? C7"));

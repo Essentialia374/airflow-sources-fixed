@@ -176,7 +176,7 @@ namespace offsets
 		notify_on_layer_change_sequence = memory::get_pattern(client_dll, CXOR("55 8B EC 8B 45 ? 85 C0 74 ? 80 B9 ? ? ? ? ? 74 ? 8B 89"));
 		accumulate_layers = memory::get_pattern(client_dll, CXOR("55 8B EC 57 8B F9 8B 0D ? ? ? ? 8B 01 8B 80"));
 		on_latch_interpolated_variables = memory::get_pattern(client_dll, CXOR("55 8B EC 83 EC ? 53 56 8B F1 57 80 BE ? ? ? ? ? 75 ? 8B 06"));
-		interpolate = memory::get_pattern(client_dll, CXOR("55 8B EC 83 E4 ? 83 EC ? 53 56 8B F1 57 83 BE ? ? ? ? ? 75 ? 8B 46 ? 8D 4E ? FF 50 ? 85 C0 74 ? 8B CE E8 ? ? ? ? 8B 9E"));
+		interpolate = memory::get_pattern(client_dll, CXOR("55 8B EC 83 E4 F8 83 EC 0C 53 56 8B F1 57 83 BE"));
 		interpolate_player = memory::get_pattern(client_dll, CXOR("55 8B EC 83 EC ? 56 8B F1 83 BE ? ? ? ? ? 0F 85"));
 		reset_latched = memory::get_pattern(client_dll, CXOR("56 8B F1 57 8B BE ? ? ? ? 85 FF 74 ? 8B CF E8 ? ? ? ? 68"));
 
