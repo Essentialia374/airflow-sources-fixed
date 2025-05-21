@@ -1,4 +1,6 @@
-my discord : https://discord.gg/CWEp8bQrWc
+[compiled binaries here](https://github.com/cacamelio/airflow-sources-fixed/releases/download/release/airflow-sources-compiled.rar)
+
+## [Don't forget to join my discord for more fire fixed pastes](https://discord.gg/CWEp8bQrWc)
 
 ## Status :
 * Airflow v1 : fully fixed
