@@ -1,7 +1,7 @@
 #include "globals.hpp"
 #include "grenade_prediction.hpp"
 #include "entlistener.hpp"
-#include "legacy ui/menu/menu.h"
+#include "nemesis_gui/gui_main/gui3.hpp"
 
 void nade_path_t::perform_fly_collision_resolution(c_game_trace& trace)
 {
@@ -387,8 +387,8 @@ void c_grenade_prediction::draw_world_path()
 		if (data.nade_detonate_time)
 			grenade_duration = std::clamp(std::abs(data.nade_expire_time - HACKS->global_vars->curtime) / data.nade_detonate_time, 0.f, 1.f);
 
-		g_menu.create_animation(mod, data.path.size() > 1 && data.is_detonated, 0.3f, lerp_animation);
-		g_menu.create_animation(oof_nade_alpha[l.first], l.second.offscreen && mod > 0.f, 0.3f, lerp_animation);
+                mod = data.path.size() > 1 && data.is_detonated ? 1.f : 0.f;
+                oof_nade_alpha[l.first] = (l.second.offscreen && mod > 0.f) ? 1.f : 0.f;
 
 		if (mod <= 0.f)
 			continue;

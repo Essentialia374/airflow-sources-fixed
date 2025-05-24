@@ -158,10 +158,7 @@ namespace hooks::vmt
 
 			if (RENDER->done)
 			{
-				// LEGACY CODE FROM OLD SOURCE
-				g_menu.store_bomb();
-				g_menu.store_spectators();
-				// LEGACY END
+                                // menu indicators are handled by nemesis_gui
 
 				RENDER->list_start();
 				{
@@ -247,8 +244,7 @@ namespace hooks::vmt
 		//  THREAD_POOL->wait_all();
 		//  THREAD_POOL->wait_all();
 
-		HACKS->reset_ctx_values();
-		g_menu.reset_game_info();
+                HACKS->reset_ctx_values();
 		MOVEMENT->reset();
 		BULLET_TRACERS->reset();
 		// EVENT_LOGS->reset();
@@ -284,8 +280,7 @@ namespace hooks::vmt
 
 		//  THREAD_POOL->wait_all();
 
-		HACKS->reset_ctx_values();
-		g_menu.reset_game_info();
+                HACKS->reset_ctx_values();
 		MOVEMENT->reset();
 		BULLET_TRACERS->reset();
 		//   EVENT_LOGS->reset();
@@ -410,9 +405,9 @@ namespace hooks::vmt
 		}
 
 		imgui_blur::set_device(device);
-		imgui_blur::new_frame();
+                imgui_blur::new_frame();
 
-		g_menu.draw();
+                ui::m_details.install();
 
 		if (g_cfg.legit.enable)
 		{

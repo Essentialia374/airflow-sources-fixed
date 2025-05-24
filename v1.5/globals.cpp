@@ -110,8 +110,7 @@ void c_hacks::init(LPVOID reserved)
 	RENDER->update_screen();
 
 	DEBUG_LOG(" [+] Reset GUI & Binds \n");
-	g_menu.reset_init();
-	g_cfg.reset_init();
+        g_cfg.reset_init();
 
 	DEBUG_LOG(" [+] Chams materials \n");
 	CHAMS->init_materials();

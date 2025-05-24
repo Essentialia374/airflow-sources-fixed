@@ -14,7 +14,6 @@ void c_event_listener::fire_game_event(c_game_event* event)
 
 	if (!std::strcmp(event->get_name(), CXOR("round_start")))
 	{
-        g_menu.reset_game_info();
         MOVEMENT->reset();
         BULLET_TRACERS->reset();
         ESP->reset();

@@ -7,7 +7,7 @@
 #include "penetration.hpp"
 #include "esp.hpp"
 #include "resolver.hpp"
-#include "legacy ui/menu/menu.h"
+#include "nemesis_gui/gui_main/gui3.hpp"
 
 constexpr auto MOLOTOV_ICON = (u8"\uE02E");
 constexpr auto SMOKE_ICON = (u8"\uE02D");
@@ -145,8 +145,8 @@ void c_esp::draw_smoke_range(float& weapon_alpha, weapon_esp_t& esp, c_base_enti
 	auto& esp_config = g_cfg.visuals.esp[esp_weapon];
 	auto smoke_color = esp_config.colors.smoke_range.base();
 
-	auto smoke_timer = esp.smoke_time / 18.f;
-	g_menu.create_animation(esp.range_lerp, smoke_timer > 0.1f, 0.3f, lerp_animation);
+        auto smoke_timer = esp.smoke_time / 18.f;
+        esp.range_lerp = smoke_timer > 0.1f ? 1.f : 0.f;
 
 	auto base_origin = entity->get_abs_origin();
 	auto world_position = get_world_position(base_origin, 160.5f * esp.range_lerp);
@@ -211,8 +211,8 @@ void c_esp::draw_molotov_range(float& weapon_alpha, weapon_esp_t& esp, c_base_en
 
 	constexpr auto fire_time = 7.03125f;
 
-	auto fire_timer = esp.inferno_time / fire_time;
-	g_menu.create_animation(esp.range_lerp, fire_timer > 0.1f, 0.3f, lerp_animation);
+        auto fire_timer = esp.inferno_time / fire_time;
+        esp.range_lerp = fire_timer > 0.1f ? 1.f : 0.f;
 
 	vec2_t origin{};
 	if (!RENDER->world_to_screen(base_origin, origin))
